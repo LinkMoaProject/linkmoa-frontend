@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { SidebarInset, SidebarProvider } from "@/shared/ui/sidebar";
+import { LeftSidebar } from "@/widget/sidebar/sidebar.ui";
 
 const SpoqaHanSansNeo = localFont({
   src: [
@@ -46,7 +48,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${SpoqaHanSansNeo.className} antialiased`}>
-        {children}
+        <SidebarProvider>
+          <LeftSidebar />
+          <SidebarInset>{children}</SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   );
