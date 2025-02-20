@@ -1,4 +1,4 @@
-import { CreatePageModal } from "@/feature/page/create-page/create-page.ui";
+import { CreatePageModal } from "@/features/page/create-page/create-page.ui";
 import {
   Collapsible,
   CollapsibleContent,

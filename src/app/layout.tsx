@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarInset, SidebarProvider } from "@/shared/ui/sidebar";
-import { LeftSidebar } from "@/widget/sidebar/sidebar.ui";
+import { LeftSidebar } from "@/widgets/sidebar/sidebar.ui";
 
 const SpoqaHanSansNeo = localFont({
   src: [
