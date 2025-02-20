@@ -24,22 +24,22 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "@/shared/ui/textarea";
 
-interface CreatePageModalProps {
+interface CreateDirectoryModalProps {
   trigger: React.ReactElement;
 }
 
 const formSchema = z.object({
-  title: z.string().refine((value) => value.trim().length > 0, {
-    message: "제목을 입력해주세요",
+  name: z.string().refine((value) => value.trim().length > 0, {
+    message: "디렉토리 이름을 입력해주세요",
   }),
   description: z.string().optional(),
 });
 
-export function CreatePageModal({ trigger }: CreatePageModalProps) {
+export function CreateDirectoryModal({ trigger }: CreateDirectoryModalProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: "",
+      name: "",
       description: "",
     },
   });
@@ -53,17 +53,20 @@ export function CreatePageModal({ trigger }: CreatePageModalProps) {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>공유 페이지 생성</DialogTitle>
-          <DialogDescription>새 공유 페이지를 생성합니다</DialogDescription>
+          <DialogTitle>디렉토리 생성</DialogTitle>
+          <DialogDescription>새 디렉토리를 생성합니다</DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form id="create-page-form" onSubmit={form.handleSubmit(onSubmit)}>
-            <TitleField control={form.control} />
+          <form
+            id="create-directory-form"
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
+            <NameField control={form.control} />
             <DescriptionField control={form.control} />
           </form>
         </Form>
         <DialogFooter>
-          <Button type="submit" form="create-page-form">
+          <Button type="submit" form="create-directory-form">
             생성
           </Button>
         </DialogFooter>
@@ -76,14 +79,14 @@ interface FieldProps {
   control: Control<z.infer<typeof formSchema>>;
 }
 
-function TitleField({ control }: FieldProps) {
+function NameField({ control }: FieldProps) {
   return (
     <FormField
       control={control}
-      name="title"
+      name="name"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>제목</FormLabel>
+          <FormLabel>이름</FormLabel>
           <FormControl>
             <Input {...field} />
           </FormControl>
