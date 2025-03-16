@@ -1,10 +1,10 @@
-import { CreateDirectoryModal } from "@/features/directory/create-directory/create-directory.ui";
-import { DeleteDirectoryModal } from "@/features/directory/delete-directory/delete-directory.ui";
-import { SendDirectoryModal } from "@/features/directory/send-directory/send-directory.ui";
-import { DeletePageModal } from "@/features/page/delete-page/delete-page.ui";
-import { LeavePageModal } from "@/features/page/leave-page/leave-page.ui";
-import { AddSiteModal } from "@/features/site/add-site/add-site.ui";
-import { Button } from "@/shared/ui/button";
+import { CreateDirectoryModal } from "~features/directory/create-directory/create-directory.ui";
+import { DeleteDirectoryModal } from "~features/directory/delete-directory/delete-directory.ui";
+import { SendDirectoryModal } from "~features/directory/send-directory/send-directory.ui";
+import { DeletePageModal } from "~features/page/delete-page/delete-page.ui";
+import { LeavePageModal } from "~features/page/leave-page/leave-page.ui";
+import { AddSiteModal } from "~features/site/add-site/add-site.ui";
+import { Button } from "~shared/ui/button";
 
 export default function Home() {
   return (

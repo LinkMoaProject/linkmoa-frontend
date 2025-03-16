@@ -1,4 +1,4 @@
-import { SidebarTrigger } from "@/shared/ui/sidebar";
+import { SidebarTrigger } from "~shared/ui/sidebar";
 
 export default function SharedPage({ params }: { params: { slug: string } }) {
   return (

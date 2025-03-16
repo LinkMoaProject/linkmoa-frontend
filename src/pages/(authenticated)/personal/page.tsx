@@ -1,15 +1,15 @@
-import { DirectoryIconView } from "@/entities/directory/ui/DirectoryIconView";
-import { SiteIconView } from "@/entities/site/ui/SiteIconView";
-import { Button } from "@/shared/ui/button";
+import { DirectoryIconView } from "~entities/directory/ui/DirectoryIconView";
+import { SiteIconView } from "~entities/site/ui/SiteIconView";
+import { Button } from "~shared/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/shared/ui/select";
-import { SidebarTrigger } from "@/shared/ui/sidebar";
-import { Tabs, TabsList, TabsTrigger } from "@/shared/ui/tabs";
+} from "~shared/ui/select";
+import { SidebarTrigger } from "~shared/ui/sidebar";
+import { Tabs, TabsList, TabsTrigger } from "~shared/ui/tabs";
 import { Folder, Grid2X2, List, SquarePlus } from "lucide-react";
 
 export default function PersonalPage() {

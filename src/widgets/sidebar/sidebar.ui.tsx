@@ -1,9 +1,9 @@
-import { CreatePageModal } from "@/features/page/create-page/create-page.ui";
+import { CreatePageModal } from "~features/page/create-page/create-page.ui";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/shared/ui/collapsible";
+} from "~shared/ui/collapsible";
 import {
   Sidebar,
   SidebarContent,
@@ -15,9 +15,9 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/shared/ui/sidebar";
+} from "~shared/ui/sidebar";
 import { Plus, Star, UserRound, UsersRound } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
 
 export function LeftSidebar() {
   // TODO: 사용자 프로필(SidebarHeader), 공유페이지 목록(SidebarMenuSub)
@@ -46,10 +46,10 @@ function MenuItem({ href, icon, label }: MenuItemProps) {
   return (
     <SidebarMenuItem>
       <SidebarMenuButton asChild>
-        <Link href={href}>
+        {/* <Link href={href}>
           {icon}
           <span>{label}</span>
-        </Link>
+        </Link> */}
       </SidebarMenuButton>
     </SidebarMenuItem>
   );
@@ -104,7 +104,7 @@ function SharedPageItem({ pageId, pageTitle }: SharedPageItemProps) {
   return (
     <SidebarMenuSubItem>
       <SidebarMenuSubButton asChild>
-        <Link href={`/shared/${pageId}`}>{pageTitle}</Link>
+        {/* <Link href={`/shared/${pageId}`}>{pageTitle}</Link> */}
       </SidebarMenuSubButton>
     </SidebarMenuSubItem>
   );

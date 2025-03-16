@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/shared/ui/button";
+import { Button } from "~shared/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/shared/ui/dialog";
+} from "~shared/ui/dialog";
 
 interface DeletePageModalProps {
   trigger: React.ReactElement;

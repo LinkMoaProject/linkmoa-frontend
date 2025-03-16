@@ -1,0 +1,50 @@
+name: React Build
+
+on:
+  push:
+    branches: [main, dev] # 또는 다른 브랜치 이름
+  pull_request:
+    branches:
+      - dev # 또는 다른 브랜치 이름
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.6.x # 필요한 Node.js 버전 설정
+
+      - name: Cache Node modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Version Check
+        run: |
+          node --version
+          npm --version
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build React app
+        run: npm run build:git
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: react-build
+          path: build
