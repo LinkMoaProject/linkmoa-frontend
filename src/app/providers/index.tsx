@@ -1,9 +1,9 @@
 import { withErrorBoundary } from "react-error-boundary";
-import { ErrorHandler, logError } from "~shared/ui/error-handler";
+import { ErrorHandler, logError } from "@/shared/ui/error-handler";
 import {
   Spinner,
   // spinnerModel
-} from "~shared/ui/spinner";
+} from "@/shared/ui/spinner";
 import { QueryClientProvider } from "./QueryClientProvider";
 import Router from "./Router";
 

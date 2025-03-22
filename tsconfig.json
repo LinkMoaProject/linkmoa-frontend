@@ -1,45 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES2020", // TODO: Decide Target
-    "lib": ["dom", "dom.iterable", "esnext"],
-    // "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true, // TODO: might have to change
-    "noEmit": true,
-    "esModuleInterop": true, // ensures compatibility between CJS and ESM
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": "./src",
-    "paths": {
-      "~app": ["./app"],
-      "~app/*": ["./app/*"],
-
-      "~pages": ["./pages"],
-      "~pages/*": ["./pages/*"],
-
-      "~widgets": ["./widgets"],
-      "~widgets/*": ["./widgets/*"],
-
-      "~features": ["./features"],
-      "~features/*": ["./features/*"],
-
-      "~entities": ["./entities"],
-      "~entities/*": ["./entities/*"],
-
-      "~shared": ["./shared"],
-      "~shared/*": ["./shared/*"]
-    }
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
